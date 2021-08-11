@@ -1,6 +1,11 @@
 import AbstractFactory.factories.FirstFactory;
 import AbstractFactory.interfaces.TransportFactory;
 import AbstractFactory.transport.interfaces.Aircraft;
+import Decorator.decorators.BorderDecorator;
+import Decorator.decorators.ColorDecorator;
+import Decorator.decorators.Decorator;
+import Decorator.objects.Component;
+import Decorator.objects.Window;
 import Factory.*;
 
 public class Patterns {
@@ -27,5 +32,11 @@ public class Patterns {
 
         Aircraft aircraft = firstFactory.createAircraft();
         aircraft.flight();
+
+        //Decorator
+
+        Component windowWithBorder = new BorderDecorator(new ColorDecorator(new Window()));
+        windowWithBorder.draw();
+
     }
 }

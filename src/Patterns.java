@@ -6,17 +6,16 @@ public class Patterns {
         TestSingleton.getInsance().print();
 
         //Factory
-        GetCar getCar = new GetCar();
 
-        Car car = getCar.getCar(RoadType.OFF_ROAD);
+        Car car = GetCar.getCar().selectCar(RoadType.GASON);
         car.drive();
         car.stop();
 
-        Car car1 = getCar.getCar(RoadType.CITY);
+        Car car1 = GetCar.getCar().selectCar(RoadType.OFF_ROAD);
         car1.drive();
         car1.stop();
 
-        car = getCar.getCar(RoadType.GASON);
+        car = GetCar.getCar().selectCar(RoadType.CITY);
         car.drive();
     }
 }

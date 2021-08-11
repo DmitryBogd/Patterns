@@ -1,7 +1,20 @@
 package Factory;
 
 public class GetCar {
-    public Car getCar(RoadType roadType){
+    private static GetCar instance;
+
+    public static GetCar getCar() {
+        if (instance == null)
+            instance = new GetCar();
+
+        return instance;
+    }
+
+    private GetCar(){
+
+    }
+
+    public Car selectCar(RoadType roadType){
         Car car = null;
         switch (roadType){
             case CITY:

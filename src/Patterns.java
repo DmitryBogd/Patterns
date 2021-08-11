@@ -1,3 +1,6 @@
+import AbstractFactory.factories.FirstFactory;
+import AbstractFactory.interfaces.TransportFactory;
+import AbstractFactory.transport.interfaces.Aircraft;
 import Factory.*;
 
 public class Patterns {
@@ -17,5 +20,12 @@ public class Patterns {
 
         car = GetCar.getCar().selectCar(RoadType.CITY);
         car.drive();
+
+        //Abstract Factory
+
+        TransportFactory firstFactory = new FirstFactory();
+
+        Aircraft aircraft = firstFactory.createAircraft();
+        aircraft.flight();
     }
 }

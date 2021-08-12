@@ -38,5 +38,6 @@ public class Patterns {
         Component windowWithBorder = new BorderDecorator(new ColorDecorator(new Window()));
         windowWithBorder.draw();
 
+        //Adapter
     }
 }
